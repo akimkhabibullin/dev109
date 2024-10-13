@@ -1,5 +1,4 @@
-<style type="text/css">
-			body {
+body {
 				font-family: Helvetica, Arial, sans-serif;
 				color: #665544;
 				padding: 22px;}
@@ -16,7 +15,7 @@ body{
 h1{
                 text-align:center;
                 color:blue;
-                font-family:'DancingScriptRegular‘;
+                font-family:'DancingScriptRegular';
                 font-size:400%;
 }
 p{  
@@ -28,4 +27,4 @@ p{
 i{
                 color:darkgreen
 }
-		</style>
+
