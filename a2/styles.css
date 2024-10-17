@@ -55,4 +55,14 @@ text-align: center;
 background-color: #038479;
 }
 
+.white img {
+   margin-left: 3.5px;
+  margin-right: 3.5px;
+}
+
+.black img {
+   margin-left: 3.5px;
+  margin-right: 3.5px;
+}
+
 
