@@ -1,76 +1,78 @@
+body {
+  font-family: Arial, Verdana, sans-serif;
+  color: #665544;
+  text-align: center;
+  background-image: url("https://github.com/akimkhabibullin/dev109/blob/main/m04/images/pexels-pixabay-355747.jpg?raw=true");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 90%;
+  margin: 0 auto;
+}
 
-  body {
-    font-family: Arial, Verdana, sans-serif;
-    color: #665544;
-    text-align: center;
-    background-image: url("https://github.com/akimkhabibullin/dev109/blob/main/m04/images/pexels-pixabay-355747.jpg?raw=true");
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 90%;
-    margin: 0 auto;
-  }
+#header {
+  text-align: center;
+  font-family: 'Dancing Script';
+}
 
-  #header {
-    text-align: center;
-    font-family: 'Dancing Script';
-  }
+#content {
+  overflow: auto;
+}
 
-  #content {
-    overflow: auto;
-  }
+#nav,
+#feature,
+#footer {
+  margin: 1%;
+  color: #fefefefe;
+}
 
-  #nav, #feature, #footer {
-    margin: 1%;
-    color: #fefefefe;
-    
-  }
+.column1,
+.column2,
+.column3 {
+  width: 31.3%;
+  float: left;
+  margin: 1%;
+  color: #fefefefe;
+}
 
-  .column1, .column2, .column3 {
-    width: 31.3%;
-    float: left;
-    margin: 1%;
-    color: #fefefefe;
-  }
+.column1 {
+  background-color: rgba(114, 53, 85, 1);
+  margin-right: 0%;
+}
 
-  .column1 {
-    background-color: rgba(114, 53, 85, 1); 
-    margin-right: 0%;
-  }
+.column2 {
+  background-color: rgba(114, 51, 51, 1);
+  margin-right: 0%;
+}
 
-  .column2 {
-    background-color: rgba(114, 51, 51, 1); 
-    margin-right: 0%;
-  }
+.column3 {
+  background-color: rgba(114, 0, 51, 1);
+  margin-right: 0%;
+}
 
-  .column3 {
-    background-color: rgba(114, 0, 51, 1); 
-    margin-right: 0%;
-  }
+li {
+  display: inline;
+  padding: 0.5em;
+}
 
-  li {
-    display: inline;
-    padding: 0.5em;
-  }
+#nav,
+#footer {
+  text-align: center;
+  background-color: rgba(203, 116, 80, 1);
+  padding: 0.5em 0;
+}
 
-  #nav, #footer {
-    text-align: center;
-    background-color: rgba(203, 116, 80, 1);
-    padding: 0.5em 0;
-  }
+#feature,
+.article {
+  text-align: center;
+  height: 10em;
+  margin-bottom: 1em;
+}
 
-  #feature, .article {
-    text-align: center;
-    height: 10em;
-    margin-bottom: 1em;
-  }
-
-  #feature {
-    background-color: rgba(59, 123, 204, 1);
-    background-image: url("https://github.com/akimkhabibullin/dev109/blob/main/m04/e9def321c9aab8a2fc31080940b20b21.png?raw=true");
-    background-size: contain;
-    background-position: right;
-    background-repeat: no-repeat;
-  }
-
-
+#feature {
+  background-color: rgba(59, 123, 204, 1);
+  background-image: url("https://github.com/akimkhabibullin/dev109/blob/main/m04/e9def321c9aab8a2fc31080940b20b21.png?raw=true");
+  background-size: contain;
+  background-position: right;
+  background-repeat: no-repeat;
+}
