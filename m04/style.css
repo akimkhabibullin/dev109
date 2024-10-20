@@ -3,7 +3,7 @@ body {
   color: #665544;
   text-align: center;
   background-image: url("https://github.com/akimkhabibullin/dev109/blob/main/m04/images/pexels-pixabay-355747.jpg?raw=true");
-  background-size: contain;
+  background-size: 200%;
   background-position: center;
   background-repeat: no-repeat;
   width: 90%;
