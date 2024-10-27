@@ -10,11 +10,11 @@ el.innerHTML = GetTableContent(operator, table);
 function GetValueFromUser(valueType) {
   var greetingMessage = 'Hello. How are you?';
   if (valueType == "operator") {
-    greetingMessage += "Enter addition or multiplication";
+    greetingMessage += " Enter addition or multiplication";
   }
   else
   {
-    greetingMessage += "Enter table";
+    greetingMessage += " Enter table";
   }
   return prompt(greetingMessage);
 }
