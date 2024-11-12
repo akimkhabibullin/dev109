@@ -1,55 +1,26 @@
+// Wait until the DOM is fully loaded before attaching the event listener
+document.addEventListener("DOMContentLoaded", function () {
+    // Select the button and attach a click event listener
+    document.getElementById("processButton").addEventListener("click", processNumber);
+});
 
-function createRhombus(pHeight, pColorEven, pColorOdd, pSymbol) {
-  upLeft(pHeight, pColorEven, pColorOdd, pSymbol);
-  downLeft(pHeight, pColorEven, pColorOdd, pSymbol);
-}
+function processNumber() {
+    // Get the values 
+    const operation = document.getElementById("propertyInput").value;
+    const number = parseInt(document.getElementById("numberInput").value);
+    const resultDiv = document.getElementById("result");
 
-function upLeft(pHeight, pColorEven, pColorOdd, pSymbol) {
-  var rLine = "";
-  for (var i = 0; i < pHeight; i++) {
-    rLine += "<p>";
 
-    
-    for (var j = 0; j < pHeight - i; j++) {
-      rLine += "<span style='color: white;'>" + pSymbol + "</span>";
+    let output = "<p>";
+    for (let i = 1; i <= 10; i++) {
+        if (operation === "Multiplication") {
+            output += `${i} x ${number} = ${i * number}<br>`;
+        } else if (operation === "Addition") {
+            output += `${i} + ${number} = ${i + number}<br>`;
+        }
     }
-    
-    for (var j = 0; j <= i * 2; j++) {
-      
-      if (j % 2 === 0) {
-        rLine += "<span style='color:" + pColorEven + ";'>" + pSymbol + "</span>";
-      } else {
-        rLine += "<span style='color:" + pColorOdd + ";'>" + pSymbol + "</span>";
-      }
-    }
+    output += "</p>";
 
-    rLine += "</p>";
-  }
-
-  document.getElementById("upLeft").innerHTML = rLine;
-}
-
-function downLeft(pHeight, pColorEven, pColorOdd, pSymbol) {
-  var rLine = "";
-  for (var i = pHeight; i >= 0; i--) {
-    rLine += "<p>";
-
-   
-    for (var j = pHeight - i; j > 0; j--) {
-      rLine += "<span style='color: white;'>" + pSymbol + "</span>";
-    }
-    
-    for (var j = 0; j <= i * 2; j++) {
-     
-      if (j % 2 === 0) {
-        rLine += "<span style='color:" + pColorEven + ";'>" + pSymbol + "</span>";
-      } else {
-        rLine += "<span style='color:" + pColorOdd + ";'>" + pSymbol + "</span>";
-      }
-    }
-
-    rLine += "</p>";
-  }
-
-  document.getElementById("downLeft").innerHTML = rLine;
+    // Display the result on the blackboard
+    resultDiv.innerHTML = output;
 }
