@@ -1,26 +1,45 @@
-// Wait until the DOM is fully loaded before attaching the event listener
-document.addEventListener("DOMContentLoaded", function () {
-    // Select the button and attach a click event listener
-    document.getElementById("processButton").addEventListener("click", processNumber);
-});
 
-function processNumber() {
-    // Get the values 
-    const operation = document.getElementById("propertyInput").value;
-    const number = parseInt(document.getElementById("numberInput").value);
-    const resultDiv = document.getElementById("result");
+// var rHeight =5;
+// var colorEven = "orange";
+// var colorOdd = "black";
+// var symbol ="*";
 
+function createRhombus(pHeight, pColorEven, pColorOdd, pSymbol) {
+  upLeft(pHeight, pColorEven, pColorOdd, pSymbol);
+function upLeft(pHeight, pColorEven, pColorOdd, pSymbol) {
+  for (var i = 0; i < pHeight; i++) {
+    rLine += "<p>";
 
-    let output = "<p>";
-    for (let i = 1; i <= 10; i++) {
-        if (operation === "Multiplication") {
-            output += `${i} x ${number} = ${i * number}<br>`;
-        } else if (operation === "Addition") {
-            output += `${i} + ${number} = ${i + number}<br>`;
-        }
+    // Print symbols in white before the main symbols to align the pattern
+    
+    for (var j = 0; j < pHeight - i; j++) {
+      rLine += "<span style='color: white;'>" + pSymbol + "</span>";
     }
-    output += "</p>";
+    // Create each line in the rhombus shape with alternating colors
+    
+    for (var j = 0; j <= i * 2; j++) {
+      // Check if position is even or odd for color switching
+      
+      if (j % 2 === 0) {
+        rLine += "<span style='color:" + pColorEven + ";'>" + pSymbol + "</span>";
+      } else {
+function downLeft(pHeight, pColorEven, pColorOdd, pSymbol) {
+  for (var i = pHeight; i >= 0; i--) {
+    rLine += "<p>";
 
-    // Display the result on the blackboard
-    resultDiv.innerHTML = output;
-}
+    // Print symbols in white before the main symbols to align the pattern
+   
+    for (var j = pHeight - i; j > 0; j--) {
+      rLine += "<span style='color: white;'>" + pSymbol + "</span>";
+    }
+    // Create each line in the rhombus shape with alternating colors
+    
+    for (var j = 0; j <= i * 2; j++) {
+      // Check if position is even or odd for color switching
+     
+      if (j % 2 === 0) {
+        rLine += "<span style='color:" + pColorEven + ";'>" + pSymbol + "</span>";
+      } else {
+
+
+        
