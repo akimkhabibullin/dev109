@@ -134,8 +134,8 @@ a:hover {
 
 #content {
     float: left;
-    width: 580px;
     margin: 10px 0 40px 20px;
+    background: #fff;
 }
 
 #content h2 {
