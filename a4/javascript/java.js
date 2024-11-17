@@ -1,90 +1,141 @@
 function validateForm() {
-    var isValid = true;
+    var isValid = true; 
     var errorMessages = "";
 
-    // First name validation
-    var firstName = document.getElementById("firstname").value.trim();
-    if (firstName === "" || firstName.length > 20 || !/^[a-zA-Z]+$/.test(firstName)) {
-        errorMessages += "<p>First name is required, must be alphabetical, and no longer than 20 characters.</p>";
+    // Clear previous error messages
+    document.querySelectorAll(".errorMessages").forEach(function(element) {
+        element.innerHTML = "";
+    });
+
+    var firstname = document.getElementById("firstname").value.trim();
+    if (!firstname || firstname.length > 20 || !isAlpha(firstname)) {
+        document.getElementById("firstnameError").innerHTML =
+            "First name is required, must be alphabetical, and no longer than 20 characters.";
         isValid = false;
     }
 
-    // Last name validation
-    var lastName = document.getElementById("lastname").value.trim();
-    if (lastName === "" || lastName.length > 50 || !/^[a-zA-Z]+$/.test(lastName)) {
-        errorMessages += "<p>Last name is required, must be alphabetical, and no longer than 50 characters.</p>";
+    var lastname = document.getElementById("lastname").value.trim();
+    if (!lastname || lastname.length > 50 || !isAlpha(lastname)) {
+        document.getElementById("lastnameError").innerHTML =
+            "Last name is required, must be alphabetical, and no longer than 50 characters.";
         isValid = false;
     }
 
-    // Email validation
     var email = document.getElementById("email").value.trim();
-    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (email === "" || !emailRegex.test(email)) {
-        errorMessages += "<p>Invalid email address.</p>";
+    if (!email || !isValidEmail(email)) {
+        document.getElementById("emailError").innerHTML = "Invalid email address.";
         isValid = false;
     }
 
-    // Phone number validation
     var phone = document.getElementById("phone").value.trim();
-    var phoneRegex = /^[0-9-]+$/;
-    if (phone === "" || phone.length > 15 || !phoneRegex.test(phone)) {
-        errorMessages += "<p>Phone number is required, must be numerical, and no longer than 15 digits.</p>";
+    if (!phone || phone.length > 15 || !isNumeric(phone)) {
+        document.getElementById("phoneError").innerHTML =
+            "Phone number is required, must be numerical, and no longer than 15 digits.";
         isValid = false;
     }
 
-    // Username validation
     var username = document.getElementById("username").value.trim();
-    if (username === "" || username.length > 12) {
-        errorMessages += "<p>Username is required and no longer than 12 characters.</p>";
+    if (!username || username.length > 12) {
+        document.getElementById("usernameError").innerHTML =
+            "Username is required and no longer than 12 characters.";
         isValid = false;
     }
 
-    // Password validation
     var password = document.getElementById("password").value.trim();
-    var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{1,7}$/;
-    if (password === "" || !passwordRegex.test(password)) {
-        errorMessages += "<p>Password must be up to 7 characters and include one uppercase, one lowercase, one number, and one special character.</p>";
+    if (!password || !isValidPassword(password)) {
+        document.getElementById("passwordError").innerHTML =
+            "Password must be up to 7 characters and include one uppercase, one lowercase, one number, and one special character.";
         isValid = false;
     }
 
-    // Address validation
+    // Validate Address
     var address = document.getElementById("address").value.trim();
-    if (address === "") {
-        errorMessages += "<p>Address is required.</p>";
+    if (!address) {
+        document.getElementById("addressError").innerHTML = "Address is required.";
         isValid = false;
     }
 
-    // City validation
+    // Validate City
     var city = document.getElementById("city").value.trim();
-    if (city === "") {
-        errorMessages += "<p>City is required.</p>";
+    if (!city) {
+        document.getElementById("cityError").innerHTML = "City is required.";
         isValid = false;
     }
 
-    // State validation
+    // Validate State
     var state = document.getElementById("state").value.trim();
-    if (state === "") {
-        errorMessages += "<p>State is required.</p>";
+    if (!state) {
+        document.getElementById("stateError").innerHTML = "State is required.";
         isValid = false;
     }
 
-    // Country validation
+    // Validate Country
     var country = document.getElementById("country").value.trim();
-    if (country === "") {
-        errorMessages += "<p>Country is required.</p>";
+    if (!country) {
+        document.getElementById("countryError").innerHTML = "Country is required.";
         isValid = false;
     }
 
-    // Zip code validation (only for USA)
-    var zipcode = document.getElementById("zipcode").value.trim();
-    if (country === "USA" && (zipcode === "" || zipcode.length !== 5 || !/^[0-9]+$/.test(zipcode))) {
-        errorMessages += "<p>Zip code is required for USA and must be 5 digits.</p>";
-        isValid = false;
+    // Validate Zip Code (only for USA)
+    if (country === "USA") {
+        var zipcode = document.getElementById("zipcode").value.trim();
+        if (!zipcode || zipcode.length !== 5 || !isNumeric(zipcode)) {
+            document.getElementById("zipcodeError").innerHTML =
+                "Zip code is required for USA and must be 5 digits.";
+            isValid = false;
+        }
     }
-
-    // Show all error messages
-    document.getElementById("errorMessages").innerHTML = errorMessages;
 
     return isValid;
 }
 
+// Function to check if a string contains only alphabetic characters
+function isAlpha(str) {
+    for (var i = 0; i < str.length; i++) {
+        if ((str.charCodeAt(i) < 65 || str.charCodeAt(i) > 90) && (str.charCodeAt(i) < 97 || str.charCodeAt(i) > 122)) {
+            return false;
+        }
+    }
+    return true;
+}
+
+// Function to check if a string is a valid email format
+function isValidEmail(str) {
+    var atSymbol = str.indexOf('@');
+    var dotSymbol = str.lastIndexOf('.');
+
+    if (atSymbol === -1 || dotSymbol === -1 || atSymbol > dotSymbol) {
+        return false;
+    }
+    return true;
+}
+
+// Function to check if a string contains only numbers (no letters or symbols)
+function isNumeric(str) {
+    for (var i = 0; i < str.length; i++) {
+        if (str.charCodeAt(i) < 48 || str.charCodeAt(i) > 57) {
+            return false;
+        }
+    }
+    return true;
+}
+
+// Function to validate password based on criteria
+function isValidPassword(str) {
+    if (str.length > 7 || str.length < 1) return false;
+
+    var hasUpper = false;
+    var hasLower = false;
+    var hasNumber = false;
+    var hasSpecialChar = false;
+
+    for (var i = 0; i < str.length; i++) {
+        var char = str.charAt(i);
+        if (char >= 'A' && char <= 'Z') hasUpper = true;
+        if (char >= 'a' && char <= 'z') hasLower = true;
+        if (char >= '0' && char <= '9') hasNumber = true;
+        if (/[!@#$%^&*(),.?":{}|<>]/.test(char)) hasSpecialChar = true;
+    }
+
+    return hasUpper && hasLower && hasNumber && hasSpecialChar;
+}
