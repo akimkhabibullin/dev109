@@ -1,3 +1,10 @@
+body {
+    background: url("https://raw.githubusercontent.com/akimkhabibullin/dev109/refs/heads/main/a4/images/skye-studios-NDLLFxTELrU-unsplash.jpg") no-repeat center center fixed; /* Ensures the image doesn't repeat and is centered */
+    background-size: cover;
+    margin: 0;
+}
+
+
 .errorMessages {
     color: red;
     font-size: 0.9em;
