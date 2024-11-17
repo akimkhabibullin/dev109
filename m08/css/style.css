@@ -12,7 +12,7 @@ body {
 	/* Responsive page rules at bottom of style sheet */
 
 h1 {
-	background-image: url('https://raw.githubusercontent.com/akimkhabibullin/dev109/main/m08/images/listkingimg.png');
+	background-image: url("https://raw.githubusercontent.com/akimkhabibullin/dev109/main/m08/images/listkingimg.png");
 	background-repeat: no-repeat;
 	background-position: center center;
 	text-align: center;
