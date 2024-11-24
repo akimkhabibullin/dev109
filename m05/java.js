@@ -1,18 +1,24 @@
-// Wait until the DOM is fully loaded before attaching the event listener
+// Wait until the DOM is fully loaded before executing the code
 document.addEventListener("DOMContentLoaded", function () {
-    // Select the button and attach a click event listener
-    document.getElementById("processButton").addEventListener("click", processNumber);
+    processNumber();
 });
 
 function processNumber() {
-    // Get the values 
-    const operation = document.getElementById("propertyInput").value;
-    const number = parseInt(document.getElementById("numberInput").value);
-    const resultDiv = document.getElementById("result");
+    // Ask the user
+    var operation = prompt("Would you like 'Multiplication' or 'Addition'?");
+    var number = parseInt(prompt("Enter a number:"));
+    
+    if (isNaN(number)) {
+        alert("Please enter a valid number.");
+        return;
+    }
+    if (operation !== "Multiplication" && operation !== "Addition") {
+        alert("Invalid operation. Please enter either 'Multiplication' or 'Addition'.");
+        return;
+    }
 
-
-    let output = "<p>";
-    for (let i = 1; i <= 10; i++) {
+    var output = "<p>";
+    for (var i = 1; i <= 10; i++) {
         if (operation === "Multiplication") {
             output += `${i} x ${number} = ${i * number}<br>`;
         } else if (operation === "Addition") {
@@ -20,7 +26,7 @@ function processNumber() {
         }
     }
     output += "</p>";
-
-    // Display the result on the blackboard
+    //display it
+    var resultDiv = document.getElementById("result");
     resultDiv.innerHTML = output;
 }
