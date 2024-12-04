@@ -196,3 +196,20 @@ a:hover {
 .clear {
     clear: both;
 }
+#animation {
+    animation-duration: 6s;
+    animation-name: slidein;
+    animation-iteration-count: 200;
+}
+
+@keyframes slidein {
+  0% {
+    margin-left: 0%;
+  }
+  50% {
+    margin-left: 782px;
+  }
+  100% {
+    margin-left: 0%;
+  }
+}
