@@ -1,9 +1,9 @@
   var images = [
     { src: "https://raw.githubusercontent.com/akimkhabibullin/dev109/refs/heads/main/m05/images/bullseye%20image.png", description: "This image shows a logo of a Bull with a bow and arrow and the word Bullseye! as the name of the logo" },
-    { src: "image2.jpg", description: "Image 2 description" },
-    { src: "image3.jpg", description: "Image 3 description" },
-    { src: "image4.jpg", description: "Image 4 description" },
-    { src: "image5.jpg", description: "Image 5 description" },
+    { src: "https://raw.githubusercontent.com/akimkhabibullin/dev109/refs/heads/main/finalp1/images/artifact3.png", description: "Image 2 description" },
+    { src: "https://raw.githubusercontent.com/akimkhabibullin/dev109/refs/heads/main/finalp1/images/artifact4.png", description: "Image 3 description" },
+    { src: "https://raw.githubusercontent.com/akimkhabibullin/dev109/refs/heads/main/finalp1/images/m8.png", description: "Image 4 description" },
+    { src: "https://raw.githubusercontent.com/akimkhabibullin/dev109/refs/heads/main/finalp1/images/m9.png", description: "Image 5 description" },
   ];
 
   var currentIndex = 0;
